@@ -16,7 +16,10 @@ export interface DecideReminderInput {
  */
 export type ReminderDecision = Record<string, unknown>;
 
-/** Squad A · Policy. Business rules RR-01 to RR-05; exact expected outputs in the reference cases. */
+/**
+ * Squad A · Policy. Business rules RR-01 to RR-05; exact expected outputs in the reference cases.
+ * Reuse Core Billing (src/billing/) where it already does the job: `npm run graph`, then `graphify query`.
+ */
 export function decideReminder(input: DecideReminderInput): ReminderDecision {
   void input;
   throw new NotImplementedError('decideReminder');
