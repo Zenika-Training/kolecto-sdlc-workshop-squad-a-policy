@@ -36,6 +36,7 @@ If it is missing or outdated, run `npm run context` (or `/nexus`), then read wha
 - Squad A implements `decideReminder` in `src/domain/decide-reminder.ts`. The route `GET /v1/invoices/:invoiceId/reminder-decision?today=YYYY-MM-DD` is already wired to it.
 - Core Billing (`src/billing/`) already knows how to compute some of what RR-01 and RR-02 need. Find it with the graph before writing it again, and check it is not `@deprecated`.
 - Squad B consumes your decision **field for field** through the `reminder-decision` contract: any rename or removal is a breaking change (API-02), and you tell them before publishing.
+- `MISSION.md` (the squad's mission and example prompts per phase) and `CHEATSHEET.md` (commands) are for the humans; you may read them to know which phase they are in.
 - `src/billing/` is Core Billing (ledger, customers, calendar, money, templates, notifications, exports, reporting, and `dunning-v0/`, the manual chasing export this programme will replace). See `src/billing/README.md`.
 - `data/` holds the synthetic pilot dataset (reference day 2026-11-20). Amounts are always integer **cents**.
 
